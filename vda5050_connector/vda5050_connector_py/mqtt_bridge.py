@@ -277,7 +277,7 @@ class MQTTBridge(Node):
         will_payload = convert_ros_message_to_json(
             VDAConnection(
                 header_id=0,
-                version=DEFAULT_PROTOCOL_VERSION,
+                version=self.vda5050_version,
                 timestamp="1970-01-01T12:00:00.00Z",
                 manufacturer=self._manufacturer_name,
                 serial_number=self._serial_number,
@@ -437,7 +437,7 @@ class MQTTBridge(Node):
 
         offline_message = VDAConnection(
             header_id=0,
-            version=DEFAULT_PROTOCOL_VERSION,
+            version=self.vda5050_version,
             timestamp=get_vda5050_ts(),
             manufacturer=self._manufacturer_name,
             serial_number=self._serial_number,
