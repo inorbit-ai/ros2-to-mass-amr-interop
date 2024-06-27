@@ -221,7 +221,7 @@ def convert_ros_message_to_json(msg):
 
 
 def get_vda5050_mqtt_topic(
-    manufacturer, serial_number, topic, interface_name="uagv", major_version="v1"
+    manufacturer, serial_number, topic, major_version, interface_name="uagv",
 ):
     """
     Return suggested VDA5050 MQTT topics.
@@ -256,6 +256,7 @@ def get_vda5050_mqtt_topic(
         string: MQTT topic
 
     """
+    
     if topic not in [
         "order",
         "state",
