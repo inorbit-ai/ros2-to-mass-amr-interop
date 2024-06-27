@@ -256,7 +256,6 @@ def get_vda5050_mqtt_topic(
         string: MQTT topic
 
     """
-    
     if topic not in [
         "order",
         "state",

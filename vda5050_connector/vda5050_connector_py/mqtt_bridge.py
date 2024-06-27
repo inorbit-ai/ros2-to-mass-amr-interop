@@ -195,12 +195,29 @@ def generate_vda_instant_action_msg(instant_action):
 
 
 def generate_vda5050_topic_alias(vda_version):
+    """
+    Create an alias for the current vda5050 version. The aliases are needed to 
+    create the mqtt topics.
+
+    Args:
+    ----
+        vda_version (string): VDA5050 version with format x.x.x.
+    
+    Raises:
+    ------
+        ValueError if the alias is not within the supported values.
+
+    Returns
+    -------
+        The alias of the version. For example, for the version '2.0.0', the alias is
+        'v2'
+    """
     if vda_version in SUPPORTED_PROTOCOL_VERSIONS:
         return f"v{vda_version[0]}"
     else:
         raise ValueError(
-            f"Invalid protocol major version. Supported versions are: {SUPPORTED_PROTOCOL_VERSIONS}"
-            f"But got {vda_version}"
+            f"Invalid protocol major version. Supported versions are: {SUPPORTED_PROTOCOL_VERSIONS},"
+            f"but got {vda_version}"
         )
 
 class MQTTBridge(Node):
