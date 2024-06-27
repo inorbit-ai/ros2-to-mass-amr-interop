@@ -196,13 +196,13 @@ def generate_vda_instant_action_msg(instant_action):
 
 def generate_vda5050_topic_alias(vda_version):
     """
-    Create an alias for the current vda5050 version. The aliases are needed to 
+    Create an alias for the current vda5050 version. The aliases are needed to
     create the mqtt topics.
 
     Args:
     ----
         vda_version (string): VDA5050 version with format x.x.x.
-    
+
     Raises:
     ------
         ValueError if the alias is not within the supported values.
@@ -234,7 +234,7 @@ class MQTTBridge(Node):
         mqtt_port = read_int_parameter(self, "mqtt_port", 1883)
         mqtt_username = read_str_parameter(self, "mqtt_username", "")
         mqtt_password = read_str_parameter(self, "mqtt_password", "")
-        
+
         self.vda5050_version = read_str_parameter(self, "vda5050_protocol_version", "2.0.0")
         self.vda5050_version_alias = generate_vda5050_topic_alias(self.vda5050_version)
 
