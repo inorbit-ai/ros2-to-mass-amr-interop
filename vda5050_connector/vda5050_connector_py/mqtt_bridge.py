@@ -200,7 +200,7 @@ def generate_vda5050_topic_alias(vda_version):
     else:
         raise ValueError(
             f"Invalid protocol major version. Supported versions are: {SUPPORTED_PROTOCOL_VERSIONS}"
-            f" preceded by 'v', but got {vda_version}"
+            f"But got {vda_version}"
         )
 
 class MQTTBridge(Node):
