@@ -306,7 +306,7 @@ def get_vda5050_ros2_topic(
 
     """
     mqtt_topic = get_vda5050_mqtt_topic(
-        manufacturer, serial_number, topic, interface_name, major_version)
+        manufacturer, serial_number, topic, major_version, interface_name)
     return (
         f"/{mqtt_topic}"
     )
